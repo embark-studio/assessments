@@ -34,6 +34,11 @@ const expOb = {
 const newExampleOb = {
   ...expOb
 }
+
+const firstName = "carson"
+const user = {
+   firstName
+}
 ```
 
 ##### Array
