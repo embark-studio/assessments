@@ -55,6 +55,8 @@ React.createElement = function(){
       element.appendChild(innerItem)
     }
   })
+  
+  return element;
 }
 ```
 
