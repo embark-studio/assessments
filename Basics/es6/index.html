@@ -39,6 +39,12 @@
         let myName = "Scott Weldon";
         alert(`This code written by ${myName}`);
       }
+
+      function showArrayDeconstruction() {
+        const someArray = [4, 5, 6];
+        const bigArray = [1, 2, 3, someArray];
+        alert("bigArray is: " + bigArray);
+      }
     </script>
   </head>
 
@@ -47,5 +53,6 @@
     <button onclick="isItVariable()">Is it variable?</button>
     <button onclick="showLetBlockScope()">Show let block scope</button>
     <button onclick="showInterpolation()">Show string interpolation</button>
+    <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
   </body>
 </html>
