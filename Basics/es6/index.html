@@ -69,6 +69,19 @@
         alert("myFunction2 returns: " + myFunction2());
       }
 
+      /*
+       * Pass `this` as argument to both `showThisArrow` and `thisArrow` to show
+       * how normal functions bind their own `this`, but arrow functions do not.
+       */
+      function showThisArrow(that) {
+        const thisArrow = (that) => {
+          alert("inside arrow function, this == that? " + (this == that));
+        };
+
+        alert("outside arrow function, this == that? " + (this == that));
+        thisArrow(this);
+      }
+
       class SuperClass {
         setX(_x) {
           this.x = _x;
@@ -102,6 +115,7 @@
     <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
     <button onclick="showObjectDeconstruction()">Show object deconstruction</button>
     <button onclick="showArrowFunctions()">Show arrow functions</button>
+    <button onclick="new showThisArrow(this)">Show this in arrow functions</button>
     <button onclick="itHasClass()">It has class</button>
   </body>
 </html>
