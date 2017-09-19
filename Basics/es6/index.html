@@ -7,6 +7,7 @@
 
     <script>
       const MY_CONSTANT = "Very Constant";
+      let myVariable = "not constant";
 
       function isItConstant() {
         try {
@@ -17,10 +18,16 @@
           alert("Got error when assigning to constant.");
         }
       }
+
+      function isItVariable() {
+        myVariable = "something new";
+        alert('Changed myVariable to "' + myVariable + '"');
+      }
     </script>
   </head>
 
   <body>
     <button onclick="isItConstant()">Is it constant?</button>
+    <button onclick="isItVariable()">Is it variable?</button>
   </body>
 </html>
