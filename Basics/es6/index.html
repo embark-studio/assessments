@@ -24,11 +24,22 @@
         myVariable = "something new";
         alert('Changed myVariable to "' + myVariable + '"');
       }
+
+      function showLetBlockScope() {
+        let x = 0;
+        alert("before if: x is " + x);
+        if (true) {
+          let x = 1;
+          alert("within if: x is " + x);
+        }
+        alert("after if: x is " + x);
+      }
     </script>
   </head>
 
   <body>
     <button onclick="isItConstant()">Is it constant?</button>
     <button onclick="isItVariable()">Is it variable?</button>
+    <button onclick="showLetBlockScope()">Show let block scope</button>
   </body>
 </html>
