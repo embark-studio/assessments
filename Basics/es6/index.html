@@ -6,12 +6,13 @@
     <title>Scott Weldon's ES6 Submission</title>
 
     <script>
+      // jshint esversion: 6
       const MY_CONSTANT = "Very Constant";
       let myVariable = "not constant";
 
       function isItConstant() {
         try {
-          MY_CONSTANT = "here's a new value";
+          MY_CONSTANT = "here's a new value"; // jshint ignore: line
           alert("should never reach here");
         }
         catch (e) {
