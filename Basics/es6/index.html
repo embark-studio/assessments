@@ -57,6 +57,17 @@
 
         alert("user name is: " + user.firstName + " " + user.lastName);
       }
+
+      function showArrowFunctions() {
+        const myFunction = () => {
+          return "hello world";
+        };
+        alert("myFunction returns: " + myFunction());
+        const myFunction2 = () => (
+          "hello world"
+        );
+        alert("myFunction2 returns: " + myFunction2());
+      }
     </script>
   </head>
 
@@ -67,5 +78,6 @@
     <button onclick="showInterpolation()">Show string interpolation</button>
     <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
     <button onclick="showObjectDeconstruction()">Show object deconstruction</button>
+    <button onclick="showArrowFunctions()">Show arrow functions</button>
   </body>
 </html>
