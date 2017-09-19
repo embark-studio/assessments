@@ -4,8 +4,23 @@
     <meta charset="utf-8">
 
     <title>Scott Weldon's ES6 Submission</title>
+
+    <script>
+      const MY_CONSTANT = "Very Constant";
+
+      function isItConstant() {
+        try {
+          MY_CONSTANT = "here's a new value";
+          alert("should never reach here");
+        }
+        catch (e) {
+          alert("Got error when assigning to constant.");
+        }
+      }
+    </script>
   </head>
 
   <body>
+    <button onclick="isItConstant()">Is it constant?</button>
   </body>
 </html>
