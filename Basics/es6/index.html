@@ -34,6 +34,11 @@
         }
         alert("after if: x is " + x);
       }
+
+      function showInterpolation() {
+        let myName = "Scott Weldon";
+        alert(`This code written by ${myName}`);
+      }
     </script>
   </head>
 
@@ -41,5 +46,6 @@
     <button onclick="isItConstant()">Is it constant?</button>
     <button onclick="isItVariable()">Is it variable?</button>
     <button onclick="showLetBlockScope()">Show let block scope</button>
+    <button onclick="showInterpolation()">Show string interpolation</button>
   </body>
 </html>
