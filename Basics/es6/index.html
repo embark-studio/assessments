@@ -68,6 +68,29 @@
         );
         alert("myFunction2 returns: " + myFunction2());
       }
+
+      class SuperClass {
+        setX(_x) {
+          this.x = _x;
+        }
+
+        setY(_y) {
+          this.y = _y;
+        }
+      }
+
+      class SubClass extends SuperClass {
+        setPos(_x, _y) {
+          this.setX(_x);
+          this.setY(_y);
+        }
+      }
+
+      function itHasClass() {
+        let myObject = new SubClass();
+        myObject.setPos(5, 20);
+        alert("Position: " + myObject.x + ", " + myObject.y);
+      }
     </script>
   </head>
 
@@ -79,5 +102,6 @@
     <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
     <button onclick="showObjectDeconstruction()">Show object deconstruction</button>
     <button onclick="showArrowFunctions()">Show arrow functions</button>
+    <button onclick="itHasClass()">It has class</button>
   </body>
 </html>
