@@ -66,7 +66,7 @@ const abc = `here ${name}`
 ##### Implicit return
 ```javascript
 ()=>(
-  "hello";
+  "hello"
 )
 ```
 ##### Explain and implement the difference arrow functions have on `this`
