@@ -45,6 +45,18 @@
         const bigArray = [1, 2, 3, someArray];
         alert("bigArray is: " + bigArray);
       }
+
+      function showObjectDeconstruction() {
+        const firstName = "James";
+        const lastName = "Holden";
+
+        const user = {
+          firstName,
+          lastName,
+        };
+
+        alert("user name is: " + user.firstName + " " + user.lastName);
+      }
     </script>
   </head>
 
@@ -54,5 +66,6 @@
     <button onclick="showLetBlockScope()">Show let block scope</button>
     <button onclick="showInterpolation()">Show string interpolation</button>
     <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
+    <button onclick="showObjectDeconstruction()">Show object deconstruction</button>
   </body>
 </html>
