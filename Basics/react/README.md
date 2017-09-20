@@ -38,19 +38,20 @@ React.createElement = function(){
   const args = [].slice.apply(arguments);
   const kind = args[0];
   const element = document.createElement(kind);
-  const props = {};
-  const _props = args[1] || {}
+  const props = args[1] || {}
   Object.keys(_props).forEach(function(key){
     if(key == "style"){
-      element.style[key] = args[1][key]
+      Object.keys(props.style).forEach((_styleKey)=>{
+        element.style[_styleKey] = props.style[_styleKey]
+      })
     }else if(element[key]){
       // This is why className instead of class
-      element[key] = args[1][key]
+      element[key] = props[key]
   })
   
   args.slice(2, args.length).forEach(function(innerItem){
     if(typeof innerItem== 'string'){
-      element.innerHTML = innerItem
+      element.innerHTML = (element.innerHTML || "") + innerItem
     }else{
       element.appendChild(innerItem)
     }
