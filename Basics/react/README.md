@@ -47,15 +47,15 @@ React.createElement = function(){
       // This is why className instead of class
       element[key] = args[1][key]
   })
-  
+
   args.slice(2, args.length).forEach(function(innerItem){
     if(typeof innerItem== 'string'){
-      element.innerHTML = innerItem
+      element.innerHTML += innerItem
     }else{
       element.appendChild(innerItem)
     }
   })
-  
+
   return element;
 }
 ```
@@ -118,13 +118,13 @@ import {Component} from 'react'
 class ExampleControlledComponent extends Component {
   constructor(){
     super()
-    
+
     /************************************
      * Must be bound to this for context
      ************************************/
     this.handleClick = this.handleClick.bind(this)
   }
-  handleClick(e){
+   handleClick(e){
     /***********************************
      * ALWAYS PREVENT ANCHOR CLICKS
      * href='#' is never enough
