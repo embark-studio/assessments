@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Scott Weldon's ES6 Submission</title>
+
+    <script>
+      // jshint esversion: 6
+      const MY_CONSTANT = "Very Constant";
+      let myVariable = "not constant";
+
+      function isItConstant() {
+        try {
+          MY_CONSTANT = "here's a new value"; // jshint ignore: line
+          alert("should never reach here");
+        }
+        catch (e) {
+          alert("Got error when assigning to constant.");
+        }
+      }
+
+      function isItVariable() {
+        myVariable = "something new";
+        alert('Changed myVariable to "' + myVariable + '"');
+      }
+
+      function showLetBlockScope() {
+        let x = 0;
+        alert("before if: x is " + x);
+        if (true) {
+          let x = 1;
+          alert("within if: x is " + x);
+        }
+        alert("after if: x is " + x);
+      }
+
+      function showInterpolation() {
+        let myName = "Scott Weldon";
+        alert(`This code written by ${myName}`);
+      }
+
+      function showArrayDeconstruction() {
+        const someArray = [4, 5, 6];
+        const bigArray = [1, 2, 3, someArray];
+        alert("bigArray is: " + bigArray);
+      }
+
+      function showObjectDeconstruction() {
+        const firstName = "James";
+        const lastName = "Holden";
+
+        const user = {
+          firstName,
+          lastName,
+        };
+
+        alert("user name is: " + user.firstName + " " + user.lastName);
+      }
+
+      function showArrowFunctions() {
+        const myFunction = () => {
+          return "hello world";
+        };
+        alert("myFunction returns: " + myFunction());
+        const myFunction2 = () => (
+          "hello world"
+        );
+        alert("myFunction2 returns: " + myFunction2());
+      }
+
+      /*
+       * Pass `this` as argument to both `showThisArrow` and `thisArrow` to show
+       * how normal functions bind their own `this`, but arrow functions do not.
+       */
+      function showThisArrow(that) {
+        const thisArrow = (that) => {
+          alert("inside arrow function, this == that? " + (this == that));
+        };
+
+        alert("outside arrow function, this == that? " + (this == that));
+        thisArrow(this);
+      }
+
+      class SuperClass {
+        setX(_x) {
+          this.x = _x;
+        }
+
+        setY(_y) {
+          this.y = _y;
+        }
+      }
+
+      class SubClass extends SuperClass {
+        setPos(_x, _y) {
+          this.setX(_x);
+          this.setY(_y);
+        }
+      }
+
+      function itHasClass() {
+        let myObject = new SubClass();
+        myObject.setPos(5, 20);
+        alert("Position: " + myObject.x + ", " + myObject.y);
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="isItConstant()">Is it constant?</button>
+    <button onclick="isItVariable()">Is it variable?</button>
+    <button onclick="showLetBlockScope()">Show let block scope</button>
+    <button onclick="showInterpolation()">Show string interpolation</button>
+    <button onclick="showArrayDeconstruction()">Show array deconstruction</button>
+    <button onclick="showObjectDeconstruction()">Show object deconstruction</button>
+    <button onclick="showArrowFunctions()">Show arrow functions</button>
+    <button onclick="new showThisArrow(this)">Show this in arrow functions</button>
+    <button onclick="itHasClass()">It has class</button>
+  </body>
+</html>
