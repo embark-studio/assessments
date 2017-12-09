@@ -26,8 +26,8 @@ const user = {
 }
 
 const expOb = {
-  firstName: "Bill"
-  lastName: "Nye"
+  firstName: "Bill",
+  lastName: "Nye",
   ...user
 }
 
